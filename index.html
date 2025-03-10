@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+  <meta name="description" content="">
+  <meta name="keywords" content="Live4D">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <title>EvolvingGS</title>
+
+
+  <link rel="stylesheet" href="static/css/bulma.min.css">
+  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+  <script defer src="static/js/fontawesome.all.min.js"></script>
+  <script src="static/js/bulma-carousel.min.js"></script>
+  <script src="static/js/bulma-slider.min.js"></script>
+  <script src="static/js/index.js"></script>
+</head>
+<body>
+
+
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">EvolvingGS: Stable Volumetric Video via High-Fidelity Evolving 3D Guassian Reconstruction</h1>
+            <div class="is-size-5 publication-authors">
+              <!-- Paper authors -->
+              <span class="author-block">
+                <!-- <a href="AUTHOR PERSONAL LINK" target="_blank">Yifeng Zhou</a><sup>*</sup>, -->
+                Chao Zhang,
+              </span>
+              <span class="author-block">
+                <!-- <a href="AUTHOR PERSONAL LINK" target="_blank">Chao Zhang</a>, -->
+                Yifeng Zhou,
+              </span>
+              <span class="author-block">
+                <!-- <a href="AUTHOR PERSONAL LINK" target="_blank">Shuheng Wang</a>, -->
+                Shuheng Wang,
+              </span>
+              <span class="author-block">
+                <!-- <a href="AUTHOR PERSONAL LINK" target="_blank">Wenfa Li</a>, -->
+                Wenfa Li,
+              </span>
+              <span class="author-block">
+                Degang Wang,
+              </span>
+              <span class="author-block">
+                Yi Xu,
+              </span>
+              <span class="author-block">
+                Shaohui Jiao
+              </span>
+            </div>
+          <hr>
+          <div class="is-size-5 publication-authors">
+            <!-- <span class="author-block">ByteDance, China<br>SIGGRAPH Asia 2023 Techinical Communications<br></span>
+            <span class="eql-cntrb"><small><br><sup>*</sup>Indicates Equal Contribution.</small></span><br> -->
+                  </div>
+
+                  <div class="column has-text-centered">
+                    <div class="publication-links">
+
+                      <!-- Arxiv PDF link -->
+                         <span class="link-block">
+                          <a href="https://arxiv.org/abs/2503.05162" target="_blank"
+                          class="external-link button is-normal is-rounded is-dark">
+                          <span class="icon">
+                            <i class="fas fa-file-pdf"></i>
+                          </span>
+                          <span>Paper</span>
+                        </a>
+                      </span>
+
+                    <!-- Supplementary PDF link -->
+                    <!-- <span class="link-block">
+                      <a href="https://dl.acm.org/action/downloadSupplement?doi=10.1145%2F3610543.3626178&file=supplementary.zip" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Supplementary</span>
+                    </a>
+                  </span> -->
+
+                    <!-- ArXiv abstract Link -->
+                    <!-- <span class="link-block">
+                      <a href="https://drive.google.com/file/d/1knqpKJRsYYDJl45k-Tfm_qESJEhmmnZE/view?usp=sharing" target="_blank"
+                      class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                        <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Preprint</span>
+                    </a>
+                  </span> -->
+
+                  <!-- Data link -->
+                  <span class="link-block">
+                    <a href="" target=""
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fa fa-database"></i>
+                    </span>
+                    <span>Data</span>
+                  </a>
+                </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<p style="text-align: center;">
+  * The Lecturer dataset will be released soon. Dancer dataset will not be released due to copyright issues.
+</p>
+
+<!-- Teaser image-->
+<section class="hero teaser">
+  <div class="container is-max-desktop">
+    <div class="hero-body">
+      <img src="static/images/teaser.jpg" alt="Live4D Show Case"/>
+    </div>
+  </div>
+</section>
+<!-- End teaser video -->
+
+<!-- Paper abstract -->
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            We have recently seen great progress in 3D scene reconstruction through explicit point-based 3D Gaussian Splatting (3DGS), notable for its high quality and fast rendering speed. However, reconstructing dynamic scenes such as complex human performances with long durations remains challenging. Prior efforts fall short of modeling a long-term sequence with drastic motions, frequent topology changes or interactions with props, and resort to segmenting the whole sequence into groups of frames that are processed independently, which undermines temporal stability and thereby leads to an unpleasant viewing experience and inefficient storage footprint. In view of this, we introduce EvolvingGS, a two-stage strategy that first deforms the Gaussian model to coarsely align with the target frame, and then refines it with minimal point addition/subtraction, particularly in fast-changing areas. Owing to the flexibility of the incrementally evolving representation, our method outperforms existing approaches in terms of both per-frame and temporal quality metrics while maintaining fast rendering through its purely explicit representation. Moreover, by exploiting temporal coherence between successive frames, we propose a simple yet effective compression algorithm that achieves over 50x compression rate. Extensive experiments on both public benchmarks and challenging custom datasets demonstrate that our method significantly advances the state-of-the-art in dynamic scene reconstruction, particularly for extended sequences with complex human performances.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+<!-- Pipeline image-->
+<section class="section hero is-small">
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Pipeline</h2>
+    <div class="hero-body">
+      <img src="static/images/pipeline.png" alt="Live4D Show Case"/>
+      <h2 class="subtitle has-text-justified">
+      </h2>
+    </div>
+  </div>
+<!-- End pipeline image -->
+
+<!-- Paper abstract -->
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+        <div class="content has-text-justified">
+          <p>
+            Our EvolvingGS framework enables continuous reconstruction of dynamic sequences (top) across diverse scenarios (bottom). Our approach maintains temporal continuity throughout long performance sequences with complex motions and clothing deformation without relying on global keyframe switching. The method achieves efficient compression across varied capture scenarios, with over 50x compression rate while preserving visual quality.
+          </p>
+          <br>
+        </div>
+    </div>
+  </div>
+</section>
+<!-- End paper abstract -->
+
+
+
+<!-- Youtube video -->
+<section class="hero is-small is-light">
+  <div class="hero-body">
+    <div class="container is-max-desktop content">
+      <!-- Paper video. -->
+      <h2 class="title is-3">Video</h2>
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          
+          <div class="publication-video">
+            <!-- Youtube embed code here -->
+            <iframe src="https://www.youtube.com/embed/Ig9TSLuYLZI?si=zouvgzxs_c4nvSKv&amp;start=1" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            <!-- <iframe src="https://www.youtube.com/embed/i1SRMw70-CE?si=zouvgzxs_c4nvSKv&amp;start=1" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End youtube video -->
+
+
+
+
+<!-- Dataset -->
+<section class="section" id="samples">
+
+  <div class="container is-max-desktop">
+    <h2 class="title is-3">Data</h2>
+    <!-- <div class="hero-body">
+    </div> -->
+    <div class="column is-three-fifths">
+    </div>
+  </div>
+
+  <div class="container is-max-desktop content">
+    <div class="content has-text-justified">
+      <p>
+        <!-- We publish a portion of the data and its corresponding reconstruction samples here for potential future research. [coming soon] -->
+        <!-- The data provided is collected using our experimental devices. 
+        The accuracy of depth estimation significantly impacts the quality of the final reconstructed meshes. 
+        Hence, we will provide depth maps of varying qualities along with their respective reconstruction results to ensure thorough verification. 
+        For detailed information on data formats, please refer to the readme.md file in the data folder. -->
+      </p>
+      <br>
+    </div>
+  </div>
+</section>
+<!--End BibTex citation -->
+
+
+
+
+<!--BibTex citation -->
+  <section class="section hero is-light" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <pre><code>@inproceedings{zhou2023live4d,
+        author = {Zhou, Yifeng and Wang, Shuheng and Li, Wenfa and Zhang, Chao and Rao, Li and Cheng, Pu and Xu, Yi and Ke, Jinle and Feng, Wenduo and Zhou, Wen and Xu, Hao and Gao, Yukang and Ding, Yang and Tang, Weixuan and Jiao, Shaohui},
+        title = {Live4D: A Real-time Capture System for Streamable Volumetric Video},
+        pages={1--4},
+        booktitle = {SIGGRAPH Asia 2023 Technical Communications},
+        year = {2023},
+        }</code></pre>
+    </div>
+</section>
+<!--End BibTex citation -->
+
+
+  <footer class="footer">
+  <div class="container">
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+
+          <p>
+            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
+            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license"  href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- Statcounter tracking code -->
+  
+<!-- You can add a tracker to track page visits by creating an account at statcounter.com -->
+
+    <!-- End of Statcounter Code -->
+
+  </body>
+  </html>
